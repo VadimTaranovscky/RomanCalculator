@@ -28,15 +28,14 @@ int main();
 int numMs = 0, numDs = 0, numCs = 0, numLs = 0, numXs = 0, numVs = 0, numIs = 0;
 int numMs1 = 0, numDs1 = 0, numCs1 = 0, numLs1 = 0, numXs1 = 0, numVs1 = 0, numIs1 = 0;
 char ch;
-
 string s1;
 string s2;
 int num10;
 int num20;
-////////////////////////////
+
 int MyClass::NoInteractive() {
 	string str;
-	ifstream file("E:\\курсачи\\Курсач 3\\Calculator\\input.txt");
+	ifstream file("E:\\курсачи\\Курсач 3\\Calculator\\NoInteraciveInput.txt");
 
 	while (getline(file, str))
 	{
@@ -91,74 +90,74 @@ int MyClass::ConvertNoInteractive2() {
 	return num20;
 }
 int MyClass::NointeractiveCalculation(char znak) {
-	int noint;
+	int NoInteractiveResult;
 	if (znak == '+')
 	{
-		noint = num10 + num20;
+		NoInteractiveResult = num10 + num20;
 	}
 
 	else if (znak == '*')
 	{
-		noint = num10*num20;
+		NoInteractiveResult = num10*num20;
 	}
 
 	else if (znak == '-')
 	{
-		noint = num10 - num20;
+		NoInteractiveResult = num10 - num20;
 	}
 	else if (znak == '/') {
-		noint = num10 / num20;
+		NoInteractiveResult = num10 / num20;
 	}
-	return noint;
+	return NoInteractiveResult;
 }
-void MyClass::outputRomanNumeralResult2(int noint, char oper)
+void MyClass::outputRomanNumeralResult2(int NoInteractiveResult, char oper)
 {
 	int x = 0;
-	while (noint >= 1000)
+	while (NoInteractiveResult >= 1000)
 	{
-		numMs1 = noint / 1000;
-		noint %= 1000;
+		numMs1 = NoInteractiveResult / 1000;
+		NoInteractiveResult %= 1000;
 	}
 
-	while ((noint < 1000) && (noint >= 500))
+	while ((NoInteractiveResult < 1000) && (NoInteractiveResult >= 500))
 	{
-		numDs1 = noint / 500;
-		noint %= 500;
+		numDs1 = NoInteractiveResult / 500;
+		NoInteractiveResult %= 500;
 	}
 
-	while ((noint < 500) && (noint >= 100))
+	while ((NoInteractiveResult < 500) && (NoInteractiveResult >= 100))
 	{
-		numCs1 = noint / 100;
-		noint %= 100;
+		numCs1 = NoInteractiveResult / 100;
+		NoInteractiveResult %= 100;
 	}
 
-	while ((noint < 100) && (noint >= 50))
+	while ((NoInteractiveResult < 100) && (NoInteractiveResult >= 50))
 	{
-		numLs1 = noint / 50;
-		noint %= 50;
+		numLs1 = NoInteractiveResult / 50;
+		NoInteractiveResult %= 50;
 	}
 
-	while ((noint < 50) && (noint >= 10))
+	while ((NoInteractiveResult < 50) && (NoInteractiveResult >= 10))
 	{
-		numXs1 = noint / 10;
-		noint %= 10;
+		numXs1 = NoInteractiveResult / 10;
+		NoInteractiveResult %= 10;
 	}
 
-	while ((noint < 10) && (noint >= 5))
+	while ((NoInteractiveResult < 10) && (NoInteractiveResult >= 5))
 	{
-		numVs1 = noint / 5;
-		noint %= 5;
+		numVs1 = NoInteractiveResult / 5;
+		NoInteractiveResult %= 5;
 	}
 
-	while ((noint < 5) && (noint >= 1))
+	while ((NoInteractiveResult < 5) && (NoInteractiveResult >= 1))
 	{
-		numIs1 = noint / 1;
-		noint %= 1;
+		numIs1 = NoInteractiveResult / 1;
+		NoInteractiveResult %= 1;
 	}
 }
 void MyClass::NoInteractiveLoad() {
 	ofstream fout;
-	fout.open("E:\\курсачи\\Курсач 3\\Calculator\\output2.txt");
+	fout.open("E:\\курсачи\\Курсач 3\\Calculator\\NoInteractiveOutput.txt");
 	int x = 0;
 	while (x != numMs1)
 	{
@@ -209,8 +208,7 @@ void MyClass::NoInteractiveLoad() {
 	}
 	cout << "Success!!!" << endl;
 }
-//////////////////////
-/////////////////
+
 int MyClass::getRomanConvertToInt()
 {
 	int num = 0;
@@ -243,49 +241,49 @@ int MyClass::getRomanConvertToInt()
 
 	return num;
 }
-void MyClass::outputRomanNumeralResult(int number, char oper)//
+void MyClass::outputRomanNumeralResult(int RomanResult, char oper)
 {
 	int x = 0;
-	while (number >= 1000)
+	while (RomanResult >= 1000)
 	{
-		numMs = number / 1000;
-		number %= 1000;
+		numMs = RomanResult / 1000;
+		RomanResult %= 1000;
 	}
 
-	while ((number < 1000) && (number >= 500))
+	while ((RomanResult < 1000) && (RomanResult >= 500))
 	{
-		numDs = number / 500;
-		number %= 500;
+		numDs = RomanResult / 500;
+		RomanResult %= 500;
 	}
 
-	while ((number < 500) && (number >= 100))
+	while ((RomanResult < 500) && (RomanResult >= 100))
 	{
-		numCs = number / 100;
-		number %= 100;
+		numCs = RomanResult / 100;
+		RomanResult %= 100;
 	}
 
-	while ((number < 100) && (number >= 50))
+	while ((RomanResult < 100) && (RomanResult >= 50))
 	{
-		numLs = number / 50;
-		number %= 50;
+		numLs = RomanResult / 50;
+		RomanResult %= 50;
 	}
 
-	while ((number < 50) && (number >= 10))
+	while ((RomanResult < 50) && (RomanResult >= 10))
 	{
-		numXs = number / 10;
-		number %= 10;
+		numXs = RomanResult / 10;
+		RomanResult %= 10;
 	}
 
-	while ((number < 10) && (number >= 5))
+	while ((RomanResult < 10) && (RomanResult >= 5))
 	{
-		numVs = number / 5;
-		number %= 5;
+		numVs = RomanResult / 5;
+		RomanResult %= 5;
 	}
 
-	while ((number < 5) && (number >= 1))
+	while ((RomanResult < 5) && (RomanResult >= 1))
 	{
-		numIs = number / 1;
-		number %= 1;
+		numIs = RomanResult / 1;
+		RomanResult %= 1;
 	}
 
 	cout << "\n" << "Number1 " << oper << " Number2 = ";
@@ -365,28 +363,28 @@ char MyClass::getOperator()
 int MyClass::Calculation(int num1, int num2, char znak)
 {
 	int otvet;
-	if (znak == '+')//если плюс
+	if (znak == '+')
 	{
-		otvet = num1 + num2;//сложить
+		otvet = num1 + num2;
 	}
 
-	else if (znak == '*')//если умножить
+	else if (znak == '*')
 	{
-		otvet = num1*num2;//умножить
+		otvet = num1*num2;
 	}
 
-	else if (znak == '-')//если минус
+	else if (znak == '-')
 	{
-		otvet = num1 - num2;//вычитание
+		otvet = num1 - num2;
 	}
-	else if (znak == '/') {// если деление
-		otvet = num1 / num2;// делим
+	else if (znak == '/') {
+		otvet = num1 / num2;
 	}
-	return otvet;//возвращаем результат 
+	return otvet;
 	
 }
-/////////////////////////////////
-void MyClass::LoadToTheFile() {//функция для записи в файл
+
+void MyClass::LoadToTheFile() {
 	int x = 0;
 	ofstream fout("E:\\курсачи\\Курсач 3\\Calculator\\output.txt");
 
@@ -439,7 +437,7 @@ void MyClass::LoadToTheFile() {//функция для записи в файл
 	}
 	cout << "Success!!!" << endl;
 }
-//////////////////////
+
 int main()
 {
 	setlocale(LC_ALL, "russian");
@@ -480,16 +478,16 @@ int main()
 		cin >> k;
 		switch (k) {
 		case 1:
-			obj9.LoadToTheFile();// перевод из int в сроку и агрузка в файл
+			obj9.LoadToTheFile();
 			break;
 		case 2:
-			obj10.NoInteractive();//чтение из файла и разбиение строк на 2
-			obj11.ConvertNoInteractive1();// перевод 1 строки в число
-			obj12.ConvertNoInteractive2();// перевод 2 строки в число
-			znak = obj13.getOperator();// получение знака с клавиатуры 
-			result2 = obj14.NointeractiveCalculation(znak);// действие с числами
-			obj15.outputRomanNumeralResult2(result2,znak);// 
-			obj16.NoInteractiveLoad();// перевод из int в строку и загрузка в файл
+			obj10.NoInteractive();
+			obj11.ConvertNoInteractive1();
+			obj12.ConvertNoInteractive2();
+			znak = obj13.getOperator();
+			result2 = obj14.NointeractiveCalculation(znak);
+			obj15.outputRomanNumeralResult2(result2,znak);
+			obj16.NoInteractiveLoad();
 			break;
 		case 3:
 			break;
